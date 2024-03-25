@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "clientes.cpp"
 #include "veiculos.cpp"
 
@@ -76,6 +77,12 @@ private:
 
 //metodos
         void mostrarPedido (){
-            cout << "Pedido: ";
+            cout << "Pedido: " << setfill('0') << setw(4) << numeroDoPedido << "\n";
+            cout << pessoa -> getNome() << "\n";
+            cout << veiculo -> getModelo() << "\n";
+            cout << getLocalDeColeta() << "\n";
+            cout << getLocalDeEntrega() << "\n";
+            cout << getPesoDaCarga() << " kg \n";
+            cout << getVolumeDaCarga() << "\n";
         }
 };

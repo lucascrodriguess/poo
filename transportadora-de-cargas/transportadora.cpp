@@ -11,5 +11,7 @@ int main (){
 
     Pedido n01 = Pedido (0001, fulano, uno, "Porto Alegre, RS", "Alegrete, RS", uno->getPeso(), 12345);
 
+    n01.mostrarPedido();
+
     return 0;
 }
