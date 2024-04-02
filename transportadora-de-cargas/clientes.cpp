@@ -10,7 +10,7 @@ private:
     string nome;
     int cpf;
     int telefone;
-    string endereço;
+    string endereco;
     string email;
 
 //metodos set
@@ -25,7 +25,7 @@ private:
             this->telefone = telefone;
         }
         void setEndereco (string endereço){
-            this->endereço = endereço;
+            this->endereco = endereço;
         }
         void setEmail (string email){
             this->email = email;
@@ -38,10 +38,10 @@ private:
 
 //construtor
         Cliente (string nome, int cpf, int telefone, string endereco, string email){
-            setNome (nome);
-            setCPF (cpf);
-            setTelefone (telefone);
-            setEndereco (endereco);
-            setEmail (email);
+            this->nome = nome;
+            this->cpf = cpf;
+            this->telefone = telefone;
+            this->endereco = endereco;
+            this->email = email;
         }
 };

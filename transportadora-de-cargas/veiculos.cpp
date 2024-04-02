@@ -62,12 +62,12 @@ private:
 
 //construtor
         Veiculo (string tipo, string nome, int carga, int ano, int chassi, int peso, string localizacao){
-            setCategoria (tipo);
-            setModelo (nome);
-            setCapacidadeDeCarga (carga);
-            setAnoDeFabricacao (ano);
-            setChassi (chassi);
-            setPeso (peso);
-            setLocalizacao (localizacao);
+            categoria = tipo;
+            modelo = nome;
+            capacidadeDeCarga = carga;
+            anoDeFabricacao = ano;
+            this->chassi = chassi;
+            this->peso = peso;
+            this->localizacao = localizacao;
         }
 };

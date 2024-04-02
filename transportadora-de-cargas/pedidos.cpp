@@ -66,13 +66,13 @@ private:
 
 //construtor
         Pedido (int numero, Cliente* pessoa, Veiculo* veiculo, string coleta, string entrega, int peso, int volume){
-            setNumeroDoPedido (numero);
-            setPessoa (pessoa);
-            setVeiculo (veiculo);
-            setLocalDeColeta (coleta);
-            setLocalDeEntrega (entrega);
-            setPesoDaCarga (peso);
-            setVolumeDaCarga (volume);
+            numeroDoPedido = numero;
+            this->pessoa = pessoa;
+            this->veiculo = veiculo;
+            localDeColeta = coleta;
+            localDeEntrega = entrega;
+            pesoDaCarga = peso;
+            volumeDaCarga = volume;
         }
 
 //metodos
