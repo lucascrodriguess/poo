@@ -18,7 +18,7 @@ class Cliente {
         int setNome (std::string nome);
         int setCPF (int cpf);
         int setTelefone (int telefone);
-        int setEndereco (std::string endereço);
+        int setEndereco (std::string endereco);
         int setEmail (std::string email);
 
         std::string getNome ();

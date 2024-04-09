@@ -3,12 +3,15 @@
 
 using namespace std;
 
+    int* idGeral = new int;
+    *idGeral = 0;
+
     Veiculo::Veiculo (){}
 
-    Veiculo::Veiculo (string tipo, string nome, string placa, int carga, int ano, int chassi, int peso, string localizacao){
+    Veiculo::Veiculo (string tipo, string nome, int carga, int ano, int chassi, int peso, string localizacao){
         categoria = tipo;
         modelo = nome;
-        this->placa = placa;
+        setId();
         capacidadeDeCarga = carga;
         anoDeFabricacao = ano;
         this->chassi = chassi;
@@ -27,8 +30,9 @@ using namespace std;
         this->modelo = modelo;
         return 1;
     } 
-    int Veiculo::setPlaca (string placa){
-        this->placa = placa;
+    int Veiculo::setId (){
+        idGeral++;
+        this->id = *idGeral;
         return 1;
     }     
     int Veiculo::setCapacidadeDeCarga (int capacidadeDeCarga){
@@ -59,8 +63,8 @@ using namespace std;
     string Veiculo::getModelo (){
         return modelo;
     }
-    string Veiculo::getPlaca (){
-        return placa;
+    int Veiculo::getId (){
+        return id;
     }
     int Veiculo::getCapacidadeDeCarga (){
         return capacidadeDeCarga;
@@ -76,4 +80,8 @@ using namespace std;
     }
     string Veiculo::getLocalizacao (){
         return localizacao;
+    }
+
+    bool Veiculo::operator== (Veiculo& comparacao){
+        return (this->id == comparacao.id);
     }

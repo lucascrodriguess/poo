@@ -12,9 +12,11 @@ int main (){
 
     Onibus mercedes = Onibus ("Mercedes", "ABC-1234");
 
-//    GerenciadorVeiculos gerenciador = GerenciadorVeiculos();
+    GerenciadorVeiculos gerenciador = GerenciadorVeiculos();
 
-//    gerenciador.adicionarVeiculo (mercedes);
+    gerenciador.adicionarVeiculo (mercedes);
+
+    gerenciador.mostrarVeiculos ();
 
     return 0;
 }

@@ -3,32 +3,41 @@
 using namespace std;
 
     GerenciadorVeiculos::GerenciadorVeiculos () {
-        list<Veiculo> veiculos;
+        list<Veiculo>* lista;
     }
 
     GerenciadorVeiculos::~GerenciadorVeiculos (){
+        delete lista;
     }
 
-    
+
+    list<Veiculo>* GerenciadorVeiculos::obterVeiculosDisponiveis (){
+        return lista;
+    }
+
+
     void GerenciadorVeiculos::adicionarVeiculo (Veiculo veiculo){
-        veiculos.push_back(veiculo);
+        lista -> push_back(veiculo);
     }
 
     void GerenciadorVeiculos::removerVeiculo (Veiculo veiculo){
-        veiculos.remove(veiculo);
+        lista -> remove(veiculo);
     }
 
-  Veiculo* GerenciadorVeiculos::buscarVeiculo (string modelo)
+    Veiculo* GerenciadorVeiculos::buscarVeiculo (string modelo)
     {
-        for (list<Veiculo>::iterator it = veiculos.begin(); it != veiculos.end(); it++)
-        {
+        for (list<Veiculo>::iterator it = lista -> begin(); it != lista -> end(); it++)
             if (it -> getModelo() == modelo)
                 return &(*it);
-        }
+
         return NULL;
     }
 
-    list<Veiculo>* GerenciadorVeiculos::getVeiculosDisponiveis (){
-        return &veiculos;
+    void GerenciadorVeiculos::mostrarVeiculos ()
+    {
+        for (list<Veiculo>::iterator it = lista -> begin(); it != lista -> end(); it++)
+            cout << it -> getId() << "\n"
+                 << it -> getModelo() << "\n"       
+                 << it -> getCategoria() << "\n";
     }
 

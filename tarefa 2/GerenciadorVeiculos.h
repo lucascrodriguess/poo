@@ -8,14 +8,18 @@ using namespace std;
 class GerenciadorVeiculos {
 
     private:
-        list<Veiculo> veiculos;
+        list<Veiculo>* lista;
 
     public:
         GerenciadorVeiculos ();
         ~GerenciadorVeiculos ();
         
+        list<Veiculo>* obterVeiculosDisponiveis ();
+
         void adicionarVeiculo (Veiculo veiculo);
         void removerVeiculo (Veiculo veiculo);
         Veiculo* buscarVeiculo (string modelo);
-        list<Veiculo>* getVeiculosDisponiveis ();
+        void mostrarVeiculos ();
+
+        bool operator== (const Veiculo& other);
 };

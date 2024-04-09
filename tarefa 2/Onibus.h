@@ -6,9 +6,8 @@ class Onibus : public Veiculo {
 
     public:
         Onibus ();
-        Onibus (string nome, string placa, int carga, int ano, int chassi, int peso, string localizacao);
-        Onibus (string nome, string placa);
         Onibus (string nome);
+        Onibus (string nome, int carga, int ano, int chassi, int peso, string localizacao);
         ~Onibus ();
         
 };

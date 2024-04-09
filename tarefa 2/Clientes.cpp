@@ -28,8 +28,8 @@ using namespace std;
         this->telefone = telefone;
         return 1;
     }
-    int Cliente::setEndereco (string endereço){
-        this->endereco = endereço;
+    int Cliente::setEndereco (string endereco){
+        this->endereco = endereco;
         return 1;
     }
     int Cliente::setEmail (string email){

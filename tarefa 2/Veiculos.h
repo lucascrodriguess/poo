@@ -5,10 +5,13 @@ using namespace std;
 
 class Veiculo {
 
+    private:
+        int* idGeral;
+
     protected:
         string categoria;
         string modelo;
-        string placa;
+        int id;
         int capacidadeDeCarga;
         int anoDeFabricacao;
         int chassi;
@@ -17,12 +20,12 @@ class Veiculo {
 
     public:
         Veiculo ();
-        Veiculo (string tipo, string nome, string placa, int carga, int ano, int chassi, int peso, string localizacao);
+        Veiculo (string tipo, string nome, int carga, int ano, int chassi, int peso, string localizacao);
         ~Veiculo ();
         
         int setCategoria (string categoria);
         int setModelo (string modelo);
-        int setPlaca (string placa);
+        int setId ();
         int setCapacidadeDeCarga (int capacidadeDeCarga);
         int setAnoDeFabricacao (int anoDeFabricacao);
         int setChassi (int chassi);
@@ -31,11 +34,12 @@ class Veiculo {
 
         string getCategoria ();
         string getModelo ();
-        string getPlaca ();
+        int getId ();
         int getCapacidadeDeCarga ();
         int getAnoDeFabricacao ();
         int getChassi ();
         int getPeso ();
         string getLocalizacao ();
 
+        bool operator== (Veiculo& other);
 };
