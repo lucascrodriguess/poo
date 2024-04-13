@@ -10,11 +10,13 @@ using namespace std;
 
 int main (){
 
-    Onibus mercedes = Onibus ("Mercedes", "ABC-1234");
+    Veiculo* mercedes = new Veiculo ("Onibus", "Mercedes", 23, 32, 324, 433, "AA");
+    Onibus* bw = new Onibus ("BW");
 
     GerenciadorVeiculos gerenciador = GerenciadorVeiculos();
 
     gerenciador.adicionarVeiculo (mercedes);
+    gerenciador.adicionarVeiculo (bw);
 
     gerenciador.mostrarVeiculos ();
 

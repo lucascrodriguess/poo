@@ -3,23 +3,44 @@
 
 using namespace std;
 
-    int* idGeral = new int;
-    *idGeral = 0;
+    int Veiculo::idGeral = 0;
 
-    Veiculo::Veiculo (){}
-
-    Veiculo::Veiculo (string tipo, string nome, int carga, int ano, int chassi, int peso, string localizacao){
-        categoria = tipo;
-        modelo = nome;
+    Veiculo::Veiculo (){
         setId();
-        capacidadeDeCarga = carga;
-        anoDeFabricacao = ano;
+        categoria = "";
+        modelo = "";
+        capacidadeDeCarga = 0;
+        anoDeFabricacao = 0;
+        chassi = 0;
+        peso = 0;
+        localizacao = "";
+    }
+
+    Veiculo::Veiculo (string modelo){
+        setId();
+        categoria = "";
+        this->modelo = modelo;
+        capacidadeDeCarga = 0;
+        anoDeFabricacao = 0;
+        chassi = 0;
+        peso = 0;
+        localizacao = "";
+    }
+
+    Veiculo::Veiculo (string categoria, string modelo, int capacidadeDeCarga, int anoDeFabricacao, int chassi, int peso, string localizacao){
+        setId();
+        this->categoria = categoria;
+        this->modelo = modelo;
+        this->capacidadeDeCarga = capacidadeDeCarga;
+        this->anoDeFabricacao = anoDeFabricacao;
         this->chassi = chassi;
         this->peso = peso;
         this->localizacao = localizacao;
     }
 
-    Veiculo::~Veiculo (){}
+    Veiculo::~Veiculo (){
+        cout << "Destrutor executado\n";
+    }
 
 
     int Veiculo::setCategoria (string categoria){
@@ -32,7 +53,7 @@ using namespace std;
     } 
     int Veiculo::setId (){
         idGeral++;
-        this->id = *idGeral;
+        this->id = idGeral;
         return 1;
     }     
     int Veiculo::setCapacidadeDeCarga (int capacidadeDeCarga){
@@ -83,5 +104,5 @@ using namespace std;
     }
 
     bool Veiculo::operator== (Veiculo& comparacao){
-        return (this->id == comparacao.id);
+        return (this->getId() == comparacao.getId());
     }

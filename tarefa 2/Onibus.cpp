@@ -4,23 +4,20 @@
         categoria = "Onibus";
     }
 
-    Onibus::Onibus (string nome) {
+    Onibus::Onibus (string modelo) {
         categoria = "Onibus";
-        modelo = nome;
-    }  
+        this->modelo = modelo;
+    }
 
-    Onibus::Onibus (string nome, int carga, int ano, int chassi, int peso, string localizacao) {
+    Onibus::Onibus (string modelo, int capacidadeDeCarga, int anoDeFabricacao, int chassi, int peso, string localizacao){
+        setId();
         categoria = "Onibus";
-        modelo = nome;
-        setId ();
-        capacidadeDeCarga = carga;
-        anoDeFabricacao = ano;
+        this->modelo = modelo;
+        this->capacidadeDeCarga = capacidadeDeCarga;
+        this->anoDeFabricacao = anoDeFabricacao;
         this->chassi = chassi;
         this->peso = peso;
         this->localizacao = localizacao;
     }
 
-
-    Onibus::~Onibus () {
-        cout << "Destrutor executado";
-    }
+    Onibus::~Onibus () {}

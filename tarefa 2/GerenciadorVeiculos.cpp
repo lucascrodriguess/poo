@@ -3,7 +3,7 @@
 using namespace std;
 
     GerenciadorVeiculos::GerenciadorVeiculos () {
-        list<Veiculo>* lista;
+        lista = new list<Veiculo>;
     }
 
     GerenciadorVeiculos::~GerenciadorVeiculos (){
@@ -18,6 +18,10 @@ using namespace std;
 
     void GerenciadorVeiculos::adicionarVeiculo (Veiculo veiculo){
         lista -> push_back(veiculo);
+    }
+
+    void GerenciadorVeiculos::adicionarVeiculo (Veiculo* veiculo){
+        lista -> push_back(*veiculo);
     }
 
     void GerenciadorVeiculos::removerVeiculo (Veiculo veiculo){
@@ -38,6 +42,11 @@ using namespace std;
         for (list<Veiculo>::iterator it = lista -> begin(); it != lista -> end(); it++)
             cout << it -> getId() << "\n"
                  << it -> getModelo() << "\n"       
-                 << it -> getCategoria() << "\n";
+                 << it -> getCategoria() << "\n"
+                 << it -> getAnoDeFabricacao() << "\n";
     }
 
+    bool operator==(Veiculo veiculo1, Veiculo veiculo2)
+    {
+        return veiculo1.getId() == veiculo2.getId();
+    }

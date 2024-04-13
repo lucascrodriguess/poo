@@ -5,10 +5,8 @@ using namespace std;
 
 class Veiculo {
 
-    private:
-        int* idGeral;
-
-    protected:
+    protected:        
+        static int idGeral;
         string categoria;
         string modelo;
         int id;
@@ -20,7 +18,8 @@ class Veiculo {
 
     public:
         Veiculo ();
-        Veiculo (string tipo, string nome, int carga, int ano, int chassi, int peso, string localizacao);
+        Veiculo (string modelo);
+        Veiculo (string categoria, string modelo, int capacidadeDeCarga, int anoDeFabricacao, int chassi, int peso, string localizacao);
         ~Veiculo ();
         
         int setCategoria (string categoria);
@@ -41,5 +40,5 @@ class Veiculo {
         int getPeso ();
         string getLocalizacao ();
 
-        bool operator== (Veiculo& other);
+        bool operator== (Veiculo& comparacao);
 };

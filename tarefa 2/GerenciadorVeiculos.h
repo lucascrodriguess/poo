@@ -17,9 +17,8 @@ class GerenciadorVeiculos {
         list<Veiculo>* obterVeiculosDisponiveis ();
 
         void adicionarVeiculo (Veiculo veiculo);
+        void adicionarVeiculo (Veiculo* veiculo);
         void removerVeiculo (Veiculo veiculo);
         Veiculo* buscarVeiculo (string modelo);
         void mostrarVeiculos ();
-
-        bool operator== (const Veiculo& other);
 };
