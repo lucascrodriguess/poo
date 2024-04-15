@@ -14,6 +14,5 @@ protected:
         GerenciadorPedidos (Pedido* pedido);
 
         void checarTransporteNecessario ();
-//        void checarDistanciaDestino ();
 
 };
