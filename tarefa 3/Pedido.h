@@ -14,33 +14,27 @@ class Pedido {
         int numeroDoPedido;
         Cliente* cliente;
         GerenciadorVeiculos* veiculos;
-        float localDeColetaLatitude;
-        float localDeColetaLongitude;
-        float localDeEntregaLatitude;
-        float localDeEntregaLongitude;
+        double localDeEntregaLatitude;
+        double localDeEntregaLongitude;
         int pesoDaCarga;
         int volumeDaCarga;
 
     public:
-        Pedido (Cliente* cliente, float localDeColetaLatitude, float localDeColetaLongitude, float localDeEntregaLatitude, float localDeEntregaLongitude);
+        Pedido (Cliente* cliente, double localDeEntregaLatitude, double localDeEntregaLongitude);
 
         int setNumeroDoPedido ();
         int setCliente (Cliente* cliente);
         int setVeiculo (Veiculo* veiculo);
-        int setLocalDeColetaLatitude (float localDeColetaLatitude);
-        int setLocalDeColetaLongitude (float localDeColetaLongitude);
-        int setLocalDeEntregaLatitude (float localDeEntregaLatitude);
-        int setLocalDeEntregaLongitude (float localDeEntregaLongitude);
+        int setLocalDeEntregaLatitude (double localDeEntregaLatitude);
+        int setLocalDeEntregaLongitude (double localDeEntregaLongitude);
         int setPesoDaCarga (int pesoDaCarga);
         int setVolumeDaCarga (int volumeDaCarga);
 
         int getNumeroDoPedido ();
         Cliente* getPessoa ();
         GerenciadorVeiculos* getVeiculos ();
-        float getLocalDeColetaLatitude ();
-        float getLocalDeColetaLongitude ();
-        float getLocalDeEntregaLatitude ();
-        float getLocalDeEntregaLongitude ();
+        double getLocalDeEntregaLatitude ();
+        double getLocalDeEntregaLongitude ();
         int getPesoDaCarga ();
         int getVolumeDaCarga ();
 

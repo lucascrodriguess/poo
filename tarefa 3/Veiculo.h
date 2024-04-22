@@ -14,13 +14,13 @@ class Veiculo {
         int anoDeFabricacao;
         int volume;
         int peso;
-        float localizacaoLatitude;
-        float localizacaoLongitude;
+        double localizacaoLatitude;
+        double localizacaoLongitude;
 
     public:
         Veiculo ();
         Veiculo (string modelo);
-        Veiculo (string categoria, string modelo, int capacidadeDeCarga, int anoDeFabricacao, int volume, int peso, float localizacaoLatitude, float localizacaoLongitude);
+        Veiculo (string categoria, string modelo, int capacidadeDeCarga, int anoDeFabricacao, int volume, int peso, double localizacaoLatitude, double localizacaoLongitude);
         ~Veiculo ();
         
         int setCategoria (string categoria);
@@ -30,8 +30,8 @@ class Veiculo {
         int setAnoDeFabricacao (int anoDeFabricacao);
         int setVolume (int volume);
         int setPeso (int peso);
-        int setLocalizacaoLatitude (float localizacaoLatitude);
-        int setLocalizacaoLongitude (float localizacaoLongitude);
+        int setLocalizacaoLatitude (double localizacaoLatitude);
+        int setLocalizacaoLongitude (double localizacaoLongitude);
 
         string getCategoria ();
         string getModelo ();
@@ -40,8 +40,8 @@ class Veiculo {
         int getAnoDeFabricacao ();
         int getVolume ();
         int getPeso ();
-        float getLocalizacaoLatitude ();
-        float getLocalizacaoLongitude();
+        double getLocalizacaoLatitude ();
+        double getLocalizacaoLongitude();
 
         bool operator== (Veiculo& comparacao);
 };

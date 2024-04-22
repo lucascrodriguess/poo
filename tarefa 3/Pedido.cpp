@@ -4,12 +4,10 @@ using namespace std;
 
     int Pedido::numeroDoPedidoGeral = 0;
 
-    Pedido::Pedido (Cliente* cliente, float localDeColetaLatitude, float localDeColetaLongitude, float localDeEntregaLatitude, float localDeEntregaLongitude){
+    Pedido::Pedido (Cliente* cliente, double localDeEntregaLatitude, double localDeEntregaLongitude){
         setNumeroDoPedido();
         this->cliente = cliente;
         veiculos = new GerenciadorVeiculos;
-        this->localDeColetaLatitude = localDeColetaLatitude;        
-        this->localDeColetaLongitude = localDeColetaLongitude;
         this->localDeEntregaLatitude = localDeEntregaLatitude;
         this->localDeEntregaLongitude = localDeEntregaLongitude;
     }
@@ -27,19 +25,11 @@ using namespace std;
         veiculos -> adicionarVeiculo(veiculo);
         return 1;
     }
-    int Pedido::setLocalDeColetaLatitude (float localDeColetaLatitude){
-        this->localDeColetaLatitude = localDeColetaLatitude;
-        return 1;
-    }
-    int Pedido::setLocalDeColetaLongitude (float localDeColetaLongitude){
-        this->localDeColetaLongitude = localDeColetaLongitude;
-        return 1;
-    }
-    int Pedido::setLocalDeEntregaLatitude (float localDeEntregaLatitude){
+    int Pedido::setLocalDeEntregaLatitude (double localDeEntregaLatitude){
         this->localDeEntregaLatitude = localDeEntregaLatitude;
         return 1;
     }    
-    int Pedido::setLocalDeEntregaLongitude (float localDeEntregaLongitude){
+    int Pedido::setLocalDeEntregaLongitude (double localDeEntregaLongitude){
         this->localDeEntregaLongitude = localDeEntregaLongitude;
         return 1;
     }
@@ -62,16 +52,10 @@ using namespace std;
     GerenciadorVeiculos* Pedido::getVeiculos (){
         return veiculos;
     }
-    float Pedido::getLocalDeColetaLatitude (){
-        return localDeColetaLatitude;
-    }
-    float Pedido::getLocalDeColetaLongitude (){
-        return localDeColetaLongitude;
-    }
-    float Pedido::getLocalDeEntregaLatitude (){
+    double Pedido::getLocalDeEntregaLatitude (){
         return localDeEntregaLatitude;
     }
-    float Pedido::getLocalDeEntregaLongitude (){
+    double Pedido::getLocalDeEntregaLongitude (){
         return localDeEntregaLongitude;
     }
     int Pedido::getPesoDaCarga (){
@@ -85,8 +69,6 @@ using namespace std;
         cout << "Pedido: " << setfill('0') << setw(4) << numeroDoPedido << "\n";
         cout << cliente -> getNome() << "\n";
         veiculos -> mostrarVeiculos();
-        cout << getLocalDeColetaLatitude() << "\n";
-        cout << getLocalDeColetaLongitude() << "\n";
         cout << getLocalDeEntregaLatitude() << "\n";
         cout << getLocalDeEntregaLongitude() << "\n";
         cout << getPesoDaCarga() << " kg \n";

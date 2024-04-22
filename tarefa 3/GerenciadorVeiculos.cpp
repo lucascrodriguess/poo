@@ -42,8 +42,7 @@ using namespace std;
         for (list<Veiculo>::iterator it = lista -> begin(); it != lista -> end(); it++)
             cout << it -> getId() << "\n"
                  << it -> getModelo() << "\n"       
-                 << it -> getCategoria() << "\n"
-                 << it -> getAnoDeFabricacao() << "\n";
+                 << it -> getCategoria() << "\n";
     }
 
     bool operator==(Veiculo veiculo1, Veiculo veiculo2)

@@ -7,7 +7,7 @@ class Caminhao : public Veiculo {
         Caminhao ();
         Caminhao (string modelo);
         Caminhao (string modelo, int capacidadeDeCarga);
-        Caminhao (string modelo, int carga, int ano, int volume, int peso, float localizacaoLatitude, float localizacaoLongitude);
+        Caminhao (string modelo, int capacidadeDeCarga, int anoDeFabricacao, int volume, int peso, double localizacaoLatitude, double localizacaoLongitude);
         ~Caminhao ();
         
 };

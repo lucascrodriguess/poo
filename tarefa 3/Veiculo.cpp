@@ -28,7 +28,7 @@ using namespace std;
         localizacaoLongitude = 0;
     }
 
-    Veiculo::Veiculo (string categoria, string modelo, int capacidadeDeCarga, int anoDeFabricacao, int volume, int peso, float localizacaoLatitude, float localizacaoLongitude){
+    Veiculo::Veiculo (string categoria, string modelo, int capacidadeDeCarga, int anoDeFabricacao, int volume, int peso, double localizacaoLatitude, double localizacaoLongitude){
         setId();
         this->categoria = categoria;
         this->modelo = modelo;
@@ -74,11 +74,11 @@ using namespace std;
         this->peso = peso;
         return 1;
     }
-    int Veiculo::setLocalizacaoLatitude (float localizacaoLatitude){
+    int Veiculo::setLocalizacaoLatitude (double localizacaoLatitude){
         this->localizacaoLatitude = localizacaoLatitude;
         return 1;
     }
-    int Veiculo::setLocalizacaoLongitude (float localizacaoLongitude){
+    int Veiculo::setLocalizacaoLongitude (double localizacaoLongitude){
         this->localizacaoLongitude = localizacaoLongitude;
         return 1;
     }    
@@ -105,10 +105,10 @@ using namespace std;
     int Veiculo::getPeso (){
         return peso;
     }
-    float Veiculo::getLocalizacaoLatitude (){
+    double Veiculo::getLocalizacaoLatitude (){
         return localizacaoLatitude;
     }        
-    float Veiculo::getLocalizacaoLongitude (){
+    double Veiculo::getLocalizacaoLongitude (){
         return localizacaoLongitude;
     }
 

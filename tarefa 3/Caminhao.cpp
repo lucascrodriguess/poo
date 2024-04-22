@@ -1,21 +1,22 @@
 #include "Caminhao.h"
 
-    Caminhao::Caminhao () {
+    Caminhao::Caminhao (){
         categoria = "Caminhao";
     }
 
-    Caminhao::Caminhao (string modelo) {
+    Caminhao::Caminhao (string modelo){
         categoria = "Caminhao";
         this->modelo = modelo;
     }
 
     Caminhao::Caminhao (string modelo, int capacidadeDeCarga) {
+        setId();
         categoria = "Caminhao";
         this->modelo = modelo;
         this->capacidadeDeCarga = capacidadeDeCarga;
     }
 
-    Caminhao::Caminhao (string modelo, int capacidadeDeCarga, int anoDeFabricacao, int volume, int peso, float localizacaoLatitude, float localizacaoLongitude){
+    Caminhao::Caminhao (string modelo, int capacidadeDeCarga, int anoDeFabricacao, int volume, int peso, double localizacaoLatitude, double localizacaoLongitude){
         setId();
         categoria = "Caminhao";
         this->modelo = modelo;
