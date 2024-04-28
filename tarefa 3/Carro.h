@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Veiculo.h"
 #pragma once
 
 class Carro : public Veiculo {

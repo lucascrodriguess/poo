@@ -20,7 +20,7 @@ using namespace std;
         lista -> push_back(veiculo);
     }
 
-    void GerenciadorVeiculos::adicionarVeiculo (Veiculo* veiculo){
+    void GerenciadorVeiculos::adicionarVeiculo (Veiculo *veiculo){
         lista -> push_back(*veiculo);
     }
 

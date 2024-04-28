@@ -1,4 +1,5 @@
 #include "Caminhao.h"
+#include <iostream>
 
     Caminhao::Caminhao (){
         categoria = "Caminhao";
