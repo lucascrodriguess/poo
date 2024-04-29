@@ -39,9 +39,11 @@ using namespace std;
     void GerenciadorVeiculos::mostrarVeiculos ()
     {
         for (list<Veiculo>::iterator it = lista -> begin(); it != lista -> end(); it++)
+        if (it->getId() != 0) {
             cout << it -> getId() << "\n"
                  << it -> getModelo() << "\n"       
-                 << it -> getCategoria() << "\n";
+                 << it -> getCategoria() << "\n"; 
+        }
     }
 
     bool operator==(Veiculo veiculo1, Veiculo veiculo2)
