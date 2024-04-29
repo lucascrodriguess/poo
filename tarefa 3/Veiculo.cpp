@@ -5,7 +5,6 @@ using namespace std;
     int Veiculo::idGeral = 0;
 
     Veiculo::Veiculo (){
-        setId();
         this->categoria = "";
         this->modelo = "";
         this->capacidadeDeCarga = 0;
@@ -48,43 +47,42 @@ using namespace std;
     } 
 
     int Veiculo::setId (){
-        idGeral++;
-        this->id = idGeral;
+        this->id = ++idGeral;
         return 1;
     }     
 
     int Veiculo::setCapacidadeDeCarga (int capacidadeDeCarga){
-        if(!isdigit(capacidadeDeCarga)) return 0;
+        if(capacidadeDeCarga <= 0) return 0;
         this->capacidadeDeCarga = capacidadeDeCarga;
         return 1;
     }
 
     int Veiculo::setAnoDeFabricacao (int anoDeFabricacao){
-        if(!isdigit(anoDeFabricacao)) return 0;
+        if(anoDeFabricacao <= 0) return 0;
         this->anoDeFabricacao = anoDeFabricacao;
         return 1;
     }
 
     int Veiculo::setVolume (int volume){
-        if(!isdigit(volume)) return 0;
+        if(volume <= 0) return 0;
         this->volume = volume;
         return 1;
     }
 
     int Veiculo::setPeso (int peso){
-        if(!isdigit(peso)) return 0;
+        if(peso <= 0) return 0;
         this->peso = peso;
         return 1;
     }
 
     int Veiculo::setLocalizacaoLatitude (double localizacaoLatitude){
-        if(!isdigit(localizacaoLatitude)) return 0;
+        if(localizacaoLatitude == 0) return 0;
         this->localizacaoLatitude = localizacaoLatitude;
         return 1;
     }
 
     int Veiculo::setLocalizacaoLongitude (double localizacaoLongitude){
-        if(!isdigit(localizacaoLongitude)) return 0;
+        if(localizacaoLongitude == 0) return 0;
         this->localizacaoLongitude = localizacaoLongitude;
         return 1;
     }    
