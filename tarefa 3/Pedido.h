@@ -20,7 +20,7 @@ class Pedido {
         int volumeDaCarga;
 
     public:
-        Pedido (Cliente* cliente, double localDeEntregaLatitude, double localDeEntregaLongitude);
+        Pedido (Cliente* cliente, int pesoDaCarga, double localDeEntregaLatitude, double localDeEntregaLongitude);
 
         int setNumeroDoPedido();
         int setCliente(Cliente* cliente);

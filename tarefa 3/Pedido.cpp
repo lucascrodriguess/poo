@@ -4,12 +4,13 @@ using namespace std;
 
     int Pedido::numeroDoPedidoGeral = 0;
 
-    Pedido::Pedido (Cliente *cliente, double localDeEntregaLatitude, double localDeEntregaLongitude){
+    Pedido::Pedido (Cliente *cliente, int pesoDaCarga, double localDeEntregaLatitude, double localDeEntregaLongitude){
         setNumeroDoPedido();
-        this->cliente = cliente;
+        setCliente(cliente);
         veiculos = new GerenciadorVeiculos;
-        this->localDeEntregaLatitude = localDeEntregaLatitude;
-        this->localDeEntregaLongitude = localDeEntregaLongitude;
+        setLocalDeEntregaLatitude(localDeEntregaLatitude);
+        setLocalDeEntregaLongitude(localDeEntregaLongitude);
+        setPesoDaCarga(pesoDaCarga);
     }
 
     int Pedido::setNumeroDoPedido (){
