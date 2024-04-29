@@ -4,38 +4,38 @@
         this->pedido = pedido;
         this->listaVeiculos = listaVeiculos;
         veiculoEscolhido = NULL;
-        pesoVeiculos = 0;
+        pesoCarga = 0;
         localAtualLatitude = 0;
         localAtualLongitude = 0;
     }
 
-    int Roteirizacao::checarTransporteNecessario() {
-        pesoVeiculos = 0;
+    /*int Roteirizacao::checarTransporteNecessario() {
+        pesoCarga = 0;
 
         for (list<Veiculo>::iterator it = pedido -> getVeiculos() -> getLista() -> begin(); it != pedido -> getVeiculos() -> getLista() -> end(); it++) {
             if (it -> getPeso() == 0)
                 cout << "Um dos veiculos nao possui peso definido\n";
 
-            pesoVeiculos += it -> getPeso();
+            pesoCarga += it -> getPeso();
         }
-        cout << "E necessario um caminhao capaz de transportar ao menos " << pesoVeiculos << " kg\n";
+        cout << "E necessario um caminhao capaz de transportar ao menos " << pesoCarga << " kg\n";
 
-        return pesoVeiculos;
-    }
+        return pesoCarga;
+    }*/
 
-    void Roteirizacao::definirCaminhao ()
+    void Roteirizacao::definirVeiculo ()
     {
-        pesoVeiculos = checarTransporteNecessario();
+        pesoCarga = pedido->getPesoDaCarga();
 
         for (list<Veiculo>::iterator it = listaVeiculos -> getLista() -> begin(); it != listaVeiculos -> getLista() -> end(); it++) {
-            if (it->getCapacidadeDeCarga() >= pesoVeiculos) {
+            if (it->getCapacidadeDeCarga() >= pesoCarga) {
                 veiculoEscolhido = addressof(*it);
                 break;
             }
         }
 
         if (veiculoEscolhido == NULL) {
-            veiculoEscolhido = new Veiculo("Categoria", "Algum", 2100, 2020, 50, pesoVeiculos, 0.0, 0.0);
+            veiculoEscolhido = new Veiculo("Categoria", "Algum", 2100, 2020, 50, pesoCarga, 0.0, 0.0);
             listaVeiculos -> adicionarVeiculo(veiculoEscolhido);
         }
     }
