@@ -9,9 +9,9 @@
 class Roteirizacao {
 
     protected:
-        Pedido* pedido;
-        GerenciadorVeiculos* listaVeiculos;
-        Veiculo* caminhaoEscolhido;
+        Pedido *pedido;
+        GerenciadorVeiculos *listaVeiculos;
+        Veiculo *veiculoEscolhido;
         int pesoVeiculos;
         double localAtualLatitude;
         double localAtualLongitude;

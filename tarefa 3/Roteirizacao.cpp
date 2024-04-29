@@ -1,21 +1,18 @@
 #include "Roteirizacao.h"
 
-    Roteirizacao::Roteirizacao (Pedido* pedido, GerenciadorVeiculos* listaVeiculos)
-    {
+    Roteirizacao::Roteirizacao(Pedido* pedido, GerenciadorVeiculos* listaVeiculos) {
         this->pedido = pedido;
         this->listaVeiculos = listaVeiculos;
-        caminhaoEscolhido = NULL;
+        veiculoEscolhido = NULL;
         pesoVeiculos = 0;
         localAtualLatitude = 0;
         localAtualLongitude = 0;
     }
 
-    int Roteirizacao::checarTransporteNecessario ()
-    {
+    int Roteirizacao::checarTransporteNecessario() {
         pesoVeiculos = 0;
 
-        for (list<Veiculo>::iterator it = pedido -> getVeiculos() -> getLista() -> begin(); it != pedido -> getVeiculos() -> getLista() -> end(); it++)
-        {
+        for (list<Veiculo>::iterator it = pedido -> getVeiculos() -> getLista() -> begin(); it != pedido -> getVeiculos() -> getLista() -> end(); it++) {
             if (it -> getPeso() == 0)
                 cout << "Um dos veiculos nao possui peso definido\n";
 
@@ -30,16 +27,16 @@
     {
         pesoVeiculos = checarTransporteNecessario();
 
-        for (list<Veiculo>::iterator it = listaVeiculos -> getLista() -> begin(); it != listaVeiculos -> getLista() -> end(); it++)
-        {
-            if (it -> getCategoria() == "Caminhao" && it -> getCapacidadeDeCarga() >= pesoVeiculos)
-                caminhaoEscolhido = addressof(*it);
+        for (list<Veiculo>::iterator it = listaVeiculos -> getLista() -> begin(); it != listaVeiculos -> getLista() -> end(); it++) {
+            if (it->getCapacidadeDeCarga() >= pesoVeiculos) {
+                veiculoEscolhido = addressof(*it);
+                break;
+            }
         }
 
-        if (caminhaoEscolhido == NULL)
-        {
-            caminhaoEscolhido = new Caminhao ("Caminhao", pesoVeiculos);
-            listaVeiculos -> adicionarVeiculo(caminhaoEscolhido);
+        if (veiculoEscolhido == NULL) {
+            veiculoEscolhido = new Veiculo("Categoria", "Algum", 2100, 2020, 50, pesoVeiculos, 0.0, 0.0);
+            listaVeiculos -> adicionarVeiculo(veiculoEscolhido);
         }
     }
 
@@ -65,14 +62,14 @@
 
             if (next(it) != pedido -> getVeiculos() -> getLista() -> end() && next(it) -> getLocalizacaoLatitude() != 0)
             {
-                cout << "A distancia entre o veiculo atual e o proximo e de " << calculaDistancia (it -> getLocalizacaoLatitude(), it -> getLocalizacaoLongitude(), next(it) -> getLocalizacaoLatitude(), next(it) -> getLocalizacaoLongitude()) << " km\n";
+                cout << "\nA distancia entre o veiculo atual eh o proximo e de " << calculaDistancia (it -> getLocalizacaoLatitude(), it -> getLocalizacaoLongitude(), next(it) -> getLocalizacaoLatitude(), next(it) -> getLocalizacaoLongitude()) << " km\n";
             }
             
             if (next(it) != pedido -> getVeiculos() -> getLista() -> end() && next(it) -> getLocalizacaoLatitude() == 0)
-                cout << "Nao e possivel determinar a distancia entre o local atual e o local do proximo veiculo\n";
+                cout << "\nNao eh possivel determinar a distancia entre o local atual e o local do proximo veiculo";
         }
 
-        cout << "A distancia entre o ultimo veiculo da lista e o destino final e de " << calculaDistancia (localAtualLatitude, localAtualLongitude, pedido -> getLocalDeEntregaLatitude(), pedido -> getLocalDeEntregaLongitude()) << " km\n";
+        cout << "\nA distancia entre o ultimo veiculo da lista e o destino final eh de " << calculaDistancia (localAtualLatitude, localAtualLongitude, pedido -> getLocalDeEntregaLatitude(), pedido -> getLocalDeEntregaLongitude()) << " km\n";
     }
 
     void Roteirizacao::setLocalAtualLatitude (double localAtualLatitude)
