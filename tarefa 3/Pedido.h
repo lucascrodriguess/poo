@@ -38,5 +38,5 @@ class Pedido {
         int getPesoDaCarga ();
         int getVolumeDaCarga ();
 
-        void mostrarPedido ();
+        friend ostream& operator<<(ostream& out, Pedido *pedido);
 };
