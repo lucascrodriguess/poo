@@ -127,7 +127,6 @@ using namespace std;
 
     int Veiculo::getPeso() {
         if(this->peso == 0) {
-            printf("\nPeso invalido");
             return 0;
         }
         return peso;

@@ -88,7 +88,7 @@ using namespace std;
 
     int Cliente::getTelefone () {
         if(this->telefone == 0) {
-            printf("Cpf Invalido");
+            printf("Telefone Invalido");
             return 0;
         }
         return this->telefone;
@@ -106,4 +106,13 @@ using namespace std;
             return "Email invalido!";
         }
         return this->email;
+    }
+
+    ostream& operator<<(ostream& out, Cliente *cliente) {
+        out << "Nome: " << cliente->getNome() << 
+        "\nCpf: " << cliente->getCPF() << 
+        "\nTelefone: " << cliente->getTelefone() << 
+        "\nEndereco: " << cliente->getEndereco() <<  
+        "\nEmail: " << cliente->getEmail(); 
+        return out;
     }

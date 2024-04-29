@@ -15,7 +15,6 @@
 
     Caminhao::Caminhao (string modelo, int capacidadeDeCarga, int anoDeFabricacao, int volume, int peso, double localizacaoLatitude, double localizacaoLongitude){
         setId();
-        categoria = "Caminhao";
         setModelo(modelo);
         setCapacidadeDeCarga(capacidadeDeCarga);
         setAnoDeFabricacao(anoDeFabricacao);
