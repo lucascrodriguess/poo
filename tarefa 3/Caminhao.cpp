@@ -2,31 +2,27 @@
 #include <iostream>
 
     Caminhao::Caminhao (){
-        categoria = "Caminhao";
-    }
-
-    Caminhao::Caminhao (string modelo){
-        categoria = "Caminhao";
-        this->modelo = modelo;
-    }
-
-    Caminhao::Caminhao (string modelo, int capacidadeDeCarga) {
         setId();
         categoria = "Caminhao";
-        this->modelo = modelo;
-        this->capacidadeDeCarga = capacidadeDeCarga;
+        this->modelo = "";
+        this->capacidadeDeCarga = 0;
+        this->anoDeFabricacao = 0;
+        this->volume = 0;
+        this->peso = 0;
+        this->localizacaoLatitude = 0.0;
+        this->localizacaoLongitude = 0.0;
     }
 
     Caminhao::Caminhao (string modelo, int capacidadeDeCarga, int anoDeFabricacao, int volume, int peso, double localizacaoLatitude, double localizacaoLongitude){
         setId();
         categoria = "Caminhao";
-        this->modelo = modelo;
-        this->capacidadeDeCarga = capacidadeDeCarga;
-        this->anoDeFabricacao = anoDeFabricacao;
-        this->volume = volume;
-        this->peso = peso;
-        this->localizacaoLatitude = localizacaoLatitude;
-        this->localizacaoLongitude = localizacaoLongitude;
+        setModelo(modelo);
+        setCapacidadeDeCarga(capacidadeDeCarga);
+        setAnoDeFabricacao(anoDeFabricacao);
+        setVolume(volume);
+        setPeso(peso);
+        setLocalizacaoLatitude(localizacaoLatitude);
+        setLocalizacaoLongitude(localizacaoLongitude);
     }
 
     Caminhao::~Caminhao () {}
