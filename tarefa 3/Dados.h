@@ -1,5 +1,8 @@
 #pragma once
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
 
 class Dados {
 private:
@@ -14,4 +17,7 @@ private:
 public:
     Dados();
     ~Dados();
+
+    void LerArquivoCSV(const std::string arquivo);
+    
 };
