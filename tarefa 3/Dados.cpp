@@ -9,9 +9,15 @@ Dados::Dados(){};
 Dados::~Dados(){};
 
 void Dados::LerArquivoCSV(const std::string arquivo) {
-    std::ifstream file;
+    std::ifstream file(arquivo);
     if(!file.is_open()) {
         throw std::runtime_error("Erro ao abrir o arquivo ");
         return;
     }
+
+    while(!file.eof()) {
+
+    }
+
+    file.close();
 }
