@@ -20,23 +20,23 @@ class Pedido {
         int volumeDaCarga;
 
     public:
-        Pedido (Cliente* cliente, double localDeEntregaLatitude, double localDeEntregaLongitude);
+        Pedido (Cliente* cliente, int pesoDaCarga, double localDeEntregaLatitude, double localDeEntregaLongitude);
 
-        int setNumeroDoPedido ();
-        int setCliente (Cliente* cliente);
-        int setVeiculo (Veiculo* veiculo);
-        int setLocalDeEntregaLatitude (double localDeEntregaLatitude);
-        int setLocalDeEntregaLongitude (double localDeEntregaLongitude);
-        int setPesoDaCarga (int pesoDaCarga);
-        int setVolumeDaCarga (int volumeDaCarga);
+        int setNumeroDoPedido();
+        int setCliente(Cliente* cliente);
+        int setVeiculo(Veiculo* veiculo);
+        int setLocalDeEntregaLatitude(double localDeEntregaLatitude);
+        int setLocalDeEntregaLongitude(double localDeEntregaLongitude);
+        int setPesoDaCarga(int pesoDaCarga);
+        int setVolumeDaCarga(int volumeDaCarga);
 
-        int getNumeroDoPedido ();
-        Cliente* getPessoa ();
-        GerenciadorVeiculos* getVeiculos ();
-        double getLocalDeEntregaLatitude ();
-        double getLocalDeEntregaLongitude ();
-        int getPesoDaCarga ();
-        int getVolumeDaCarga ();
+        int getNumeroDoPedido();
+        Cliente* getPessoa();
+        GerenciadorVeiculos* getVeiculos();
+        double getLocalDeEntregaLatitude();
+        double getLocalDeEntregaLongitude();
+        int getPesoDaCarga();
+        int getVolumeDaCarga();
 
-        void mostrarPedido ();
+        friend ostream& operator<<(ostream& out, Pedido *pedido);
 };
