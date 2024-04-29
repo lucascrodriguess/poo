@@ -26,4 +26,6 @@ class Cliente {
         int getTelefone();
         std::string getEndereco();
         std::string getEmail();
+
+        friend std::ostream& operator<<(std::ostream& out, Cliente *cliente);;
 };

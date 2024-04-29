@@ -1,4 +1,5 @@
 #include "Cliente.h"
+#include <iostream>
 
 using namespace std;
 
@@ -109,7 +110,7 @@ using namespace std;
     }
 
     ostream& operator<<(ostream& out, Cliente *cliente) {
-        out << "Nome: " << cliente->getNome() << 
+        out << "\nNome: " << cliente->getNome() << 
         "\nCpf: " << cliente->getCPF() << 
         "\nTelefone: " << cliente->getTelefone() << 
         "\nEndereco: " << cliente->getEndereco() <<  
