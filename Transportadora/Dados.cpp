@@ -14,9 +14,10 @@ void Dados::LerArquivoCSV(const std::string arquivo) {
         throw std::runtime_error("Erro ao abrir o arquivo ");
         return;
     }
-    std::string linha;
+
     while(!file.eof()) {
-        file.getline(file, linha);
+
     }
+
     file.close();
 }
