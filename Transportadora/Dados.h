@@ -4,25 +4,20 @@
 #include <sstream>
 #include <string>
 #include <list>
+#include "ListaClientes.h"
+#include "ListaPedidos.h"
+#include "Cliente.h"
+#include "Pedido.h"
 
 class Dados {
 private:
-    std::list<std::string> nome;
-    std::list<int> cpf;
-    std::list<int> telefone;
-    std::list<std::string> endereco;
-    std::list<std::string> email;
-    std::list<std::string> enderecoColeta;
-    std::list<std::string> enderecoEntrega;
-    std::list<int> peso;
-    std::list<int> volume;
-    std::list<std::string> prioridade;
+    ListaClientes listaClientes;
+    ListaPedidos listaPedidos;
 
 public:
     Dados();
     ~Dados();
 
     void LerArquivoCSV(const std::string arquivo); 
-    void SeparaeArmazenaDados(const std::string linha, char x);    
-    void mostraDados(Dados *dados);                                       
+    void SeparaeArmazenaDados(const std::string linha, char x);                                   
 };

@@ -4,6 +4,10 @@ using namespace std;
 
     int Pedido::numeroDoPedidoGeral = 0;
 
+    Pedido::Pedido(){}
+
+    Pedido::~Pedido(){}
+
     Pedido::Pedido (Cliente *cliente, int pesoDaCarga, double localDeEntregaLatitude, double localDeEntregaLongitude){
         setNumeroDoPedido();
         setCliente(cliente);
@@ -73,6 +77,7 @@ using namespace std;
 
     ostream& operator<<(ostream& out, Pedido *pedido) {
         out << "Pedido: #" << setfill('0') << setw(4) << pedido->getNumeroDoPedido() << 
+        "\nCliente: " << pedido->getPessoa() <<
         "\nEntrega Latitude: " << pedido->getLocalDeEntregaLatitude() << 
         "\nEntrega Longitude: " << pedido->getLocalDeEntregaLongitude() << 
         "\nPeso: " << pedido->getPesoDaCarga() << "kg" << 

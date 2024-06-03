@@ -31,7 +31,7 @@ using namespace std;
         return 1;               
     }
 
-    int Cliente::setCPF (string cpf){
+    int Cliente::setCPF (string cpf){ //arrumar
         int contador = 0;
         for(auto &n : cpf) {
             contador++;
