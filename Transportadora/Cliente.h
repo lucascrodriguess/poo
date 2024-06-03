@@ -27,5 +27,5 @@ class Cliente {
         std::string getEndereco();
         std::string getEmail();
 
-        friend std::ostream& operator<<(std::ostream& out, Cliente *cliente);;
+        friend std::ostream& operator<<(std::ostream& out, Cliente *cliente);
 };

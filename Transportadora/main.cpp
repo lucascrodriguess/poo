@@ -5,6 +5,7 @@
 #include "GerenciadorVeiculos.h"
 #include "Roteirizacao.h"
 #include "Caminhao.h"
+#include "Dados.h"
 #include <iostream>
 #include <list>
 
