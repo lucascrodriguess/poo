@@ -12,11 +12,15 @@ void ListaClientes::adicionaCliente(Cliente *pessoa) {
 }
 
 void ListaClientes::mostraListaClientes() {
-    for(auto &dado : *listaClientes) {
-        std::cout << "Nome: " << dado.getNome()
-        << "Cpf: " << dado.getCPF()
-        << "Telefone: " << dado.getTelefone()
-        << "Endereco: " << dado.getEndereco()
-        << "Email: " << dado.getEmail() << std::endl;
+    if(!listaClientes->empty()) {
+        for(auto &dado : *listaClientes) {
+            std::cout << "Nome: " << dado.getNome()
+            << "Cpf: " << dado.getCPF()
+            << "Telefone: " << dado.getTelefone()
+            << "Endereco: " << dado.getEndereco()
+            << "Email: " << dado.getEmail() << std::endl;
+        }
     }
+    
+    else std::cout << "Lista de Clientes vazia" << std::endl;
 }

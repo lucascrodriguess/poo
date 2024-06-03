@@ -6,12 +6,12 @@ using namespace std;
     Cliente::Cliente (){
         this->nome = "";
         this->cpf = "";
-        this->telefone = 0;
+        this->telefone = "";
         this->endereco = "";
         this->email = "";
     }
     
-    Cliente::Cliente (string nome, string cpf, int telefone, string endereco, string email){
+    Cliente::Cliente (string nome, string cpf, std::string telefone, string endereco, string email){
         setNome(nome);
         setCPF(cpf);
         setTelefone(telefone);
@@ -47,7 +47,7 @@ using namespace std;
         return 1;
     }
 
-    int Cliente::setTelefone (int telefone){
+    int Cliente::setTelefone (std::string telefone){
         this->telefone = telefone;
         return 1;
     }
@@ -87,11 +87,11 @@ using namespace std;
         return this->cpf;
     }
 
-    int Cliente::getTelefone () {
-        if(this->telefone == 0) {
+    std::string Cliente::getTelefone () {
+        /*if(this->telefone == 0) {
             printf("Telefone Invalido");
             return 0;
-        }
+        }*/
         return this->telefone;
     }
 

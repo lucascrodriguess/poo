@@ -53,6 +53,19 @@ using namespace std;
         return 1;
     }
 
+    int Pedido::setEnderecoColeta(string coleta){
+        this->enderecoColeta = coleta;
+        return 1;
+    }
+    int Pedido::setEnderecoEntrega(string entrega){
+        this->enderecoEntrega = entrega;
+        return 1;
+    }
+    int Pedido::setPrioridade(string prioridade){
+        this->prioridade = prioridade;
+        return 1;
+    }
+
     int Pedido::getNumeroDoPedido (){
         return numeroDoPedido;
     }
@@ -73,6 +86,15 @@ using namespace std;
     }
     int Pedido::getVolumeDaCarga (){
         return volumeDaCarga;
+    }
+    string Pedido::getEnderecoColeta() {
+        return enderecoColeta;
+    }
+    string Pedido::getEnderecoEntrega(){
+        return enderecoEntrega;
+    }
+    string Pedido::getPrioridade(){
+        return prioridade;
     }
 
     ostream& operator<<(ostream& out, Pedido *pedido) {

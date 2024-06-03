@@ -11,13 +11,17 @@
 
 class Dados {
 private:
-    ListaClientes listaClientes;
-    ListaPedidos listaPedidos;
+    ListaClientes *listaClientes;
+    ListaPedidos *listaPedidos;
 
 public:
-    Dados();
+    Dados(ListaClientes *listaClientes, ListaPedidos *listaPedidos);
     ~Dados();
 
+    void setListaClientes(ListaClientes *listaClientes);
+    void setListaPedidos(ListaPedidos *listaPedidos);
+
     void LerArquivoCSV(const std::string arquivo); 
-    void SeparaeArmazenaDados(const std::string linha, char x);                                   
+    void SeparaeArmazenaDados(const std::string linha, char x);   
+    std::string ArrumaLinha(std:: ifstream &x, string line);                        
 };

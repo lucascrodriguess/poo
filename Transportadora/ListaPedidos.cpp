@@ -12,11 +12,15 @@ void ListaPedidos::adicionaPedidos(Pedido *pedido) {
 }
 
 void ListaPedidos::mostraListaPedidos() {
-    for(auto &dado : *listaPedidos) {
-        std::cout << "Endereco Coleta: " << dado.getEnderecoColeta()
-        << "Endereco Entrega: " << dado.getEnderecoEntrega()
-        << "Peso: " << dado.getPesoDaCarga()
-        << "Volume: " << dado.getVolumeDaCarga()
-        << "Prioridade: " << dado.getPrioridade() << std::endl;
+    if(!listaPedidos->empty()) {
+        for(auto &dado : *listaPedidos) {
+            std::cout << "Endereco Coleta: " << dado.getEnderecoColeta()
+            << "Endereco Entrega: " << dado.getEnderecoEntrega()
+            << "Peso: " << dado.getPesoDaCarga()
+            << "Volume: " << dado.getVolumeDaCarga()
+            << "Prioridade: " << dado.getPrioridade() << std::endl;
+        }
     }
+
+    else std::cout << "Lista de Pedidos vazia" << std::endl;
 }

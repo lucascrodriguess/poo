@@ -6,6 +6,8 @@
 #include "Roteirizacao.h"
 #include "Caminhao.h"
 #include "Dados.h"
+#include "ListaClientes.h"
+#include "ListaPedidos.h"
 #include <iostream>
 #include <list>
 
@@ -21,7 +23,7 @@ int main (void){
         veiculosTotais -> adicionarVeiculo (citroen);
         veiculosTotais -> mostrarVeiculos ();
 
-    Cliente *cliente = new Cliente ("Junior", "01234567895", 999554422, "Rua", "cliente@email.com");
+    /*Cliente *cliente = new Cliente ("Junior", "01234567895", 999554422, "Rua", "cliente@email.com");
         cout << "" << cliente << endl;
     Pedido *pedido1 = new Pedido (cliente, 580, -29.991167370515466, -51.13583471499755);
         pedido1 -> setVeiculo (mercedes);
@@ -30,7 +32,14 @@ int main (void){
 
     Roteirizacao *gerenciador = new Roteirizacao (pedido1, veiculosTotais);
     gerenciador->definirVeiculo();
-        gerenciador -> roteiriza();
+        gerenciador -> roteiriza();*/
+    
+    ListaClientes *listaC = new ListaClientes;
+    ListaPedidos *listaP = new ListaPedidos;\
+    Dados *novoDados = new Dados(listaC, listaP);
+    novoDados->LerArquivoCSV("dados_entregas.csv");
+    listaC->mostraListaClientes();
+    listaP->mostraListaPedidos();
 
     return 0;
 }
