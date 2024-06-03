@@ -27,6 +27,7 @@ void Dados::LerArquivoCSV(const std::string arquivo) {
 
     while (std::getline(file, linha)) {
         linha = ArrumaLinha(file, linha);
+        std::cout<<"linha completa..." << linha << std::endl;
         SeparaeArmazenaDados(linha, ',');
     }
 
@@ -36,7 +37,7 @@ void Dados::LerArquivoCSV(const std::string arquivo) {
 std::string Dados::ArrumaLinha(std::ifstream &x, std::string line) {
     
     int quebra_de_linha = 0;
-    while (!line.empty() && line.back() == '\n' && quebra_de_linha < 7) {
+    while (!line.empty() && line.back() == '\n' && quebra_de_linha < 6) {
         line.pop_back();
         quebra_de_linha++;
         
@@ -62,7 +63,7 @@ void Dados::SeparaeArmazenaDados(const std::string linha, char x) {
     int quebra_de_linha = 0;
 
     do{ std::getline(lineStream, conteudo_atributo, x);
-        std::cout<<" " << conteudo_atributo << std::endl;
+        std::cout<<"conteudo_atributo: " << conteudo_atributo << std::endl;
 
         switch (virgulas) {
         case 0:
