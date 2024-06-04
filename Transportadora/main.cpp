@@ -35,7 +35,7 @@ int main (void){
         gerenciador -> roteiriza();*/
     
     ListaClientes *listaC = new ListaClientes;
-    ListaPedidos *listaP = new ListaPedidos;\
+    ListaPedidos *listaP = new ListaPedidos;
     Dados *novoDados = new Dados(listaC, listaP);
     novoDados->LerArquivoCSV("dados_entregas.csv");
     listaC->mostraListaClientes();
