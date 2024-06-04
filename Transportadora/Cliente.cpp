@@ -22,8 +22,13 @@ using namespace std;
     Cliente::~Cliente (){}
 
     int Cliente::setNome (string nome){
+        int flag;
         for(auto &n : nome) {
-            if(!isalpha(n)) {
+            if(!isdigit(n)) {
+                flag = 0;
+            } 
+            else {
+                flag = 1;
                 return 0;
             }
         }

@@ -15,10 +15,11 @@ void ListaPedidos::mostraListaPedidos() {
     if(!listaPedidos->empty()) {
         for(auto &dado : *listaPedidos) {
             std::cout << "Endereco Coleta: " << dado.getEnderecoColeta()
-            << "Endereco Entrega: " << dado.getEnderecoEntrega()
-            << "Peso: " << dado.getPesoDaCarga()
-            << "Volume: " << dado.getVolumeDaCarga()
-            << "Prioridade: " << dado.getPrioridade() << std::endl;
+            << "\nEndereco Entrega: " << dado.getEnderecoEntrega()
+            << "\nPeso: " << dado.getPesoDaCarga()
+            << "\nVolume: " << dado.getVolumeDaCarga()
+            << "\nPrioridade: " << dado.getPrioridade()
+            << "\n\n" << std::endl;
         }
     }
 

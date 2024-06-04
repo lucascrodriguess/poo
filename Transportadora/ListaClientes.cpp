@@ -15,10 +15,11 @@ void ListaClientes::mostraListaClientes() {
     if(!listaClientes->empty()) {
         for(auto &dado : *listaClientes) {
             std::cout << "Nome: " << dado.getNome()
-            << "Cpf: " << dado.getCPF()
-            << "Telefone: " << dado.getTelefone()
-            << "Endereco: " << dado.getEndereco()
-            << "Email: " << dado.getEmail() << std::endl;
+            << "\nCpf: " << dado.getCPF()
+            << "\nTelefone: " << dado.getTelefone()
+            << "\nEndereco: " << dado.getEndereco()
+            << "\nEmail: " << dado.getEmail()
+            << "\n\n" << std::endl;
         }
     }
     
