@@ -7,6 +7,10 @@ ListaPedidos::~ListaPedidos(){
     delete listaPedidos;
 };
 
+std::list<Pedido> *ListaPedidos::getLista() {
+    return listaPedidos;
+}
+
 void ListaPedidos::adicionaPedidos(Pedido *pedido) {
     listaPedidos->emplace_back(*pedido);
 }

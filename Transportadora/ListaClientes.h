@@ -12,6 +12,7 @@ class ListaClientes {
         ListaClientes();
         ~ListaClientes();
 
+        std::list<Cliente>*getLista();
         void adicionaCliente(Cliente *pessoa);
         void mostraListaClientes();
 

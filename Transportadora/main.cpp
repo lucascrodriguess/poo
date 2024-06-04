@@ -40,6 +40,4 @@ int main (void){
     novoDados->LerArquivoCSV("dados_entregas.csv");
     listaC->mostraListaClientes();
     listaP->mostraListaPedidos();
-
-    return 0;
 }

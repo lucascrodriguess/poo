@@ -26,12 +26,12 @@ void Dados::LerArquivoCSV(const std::string arquivo) {
     } else {
         getline(file, linha); // pula a linha de titulos da tabela
         std::cout<<"Arquivo aberto!" << std::endl;
-    }
+    }  
 
     while (getline(file, linha)) {
         //std::cout<<"linha parcial: " << linha << std::endl;
         linha = ArrumaLinha(file, linha);
-        //std::cout<<"linha completa: " << linha << std::endl;
+        std::cout<<"\nlinha completa: " << linha << std::endl;
         SeparaeArmazenaDados(linha, ','); 
     }
     std::cout<<"Arquivo fechado!\n" << std::endl;
@@ -148,7 +148,6 @@ void Dados::SeparaeArmazenaDados(const std::string linha, char x) {
     listaClientes->adicionaCliente(novoCliente);
     listaPedidos->adicionaPedidos(novoPedido);
 }
-
 
 
 

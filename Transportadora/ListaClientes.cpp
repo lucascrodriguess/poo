@@ -7,6 +7,10 @@ ListaClientes::~ListaClientes(){
     delete listaClientes;
 };
 
+std::list<Cliente> *ListaClientes::getLista() {
+    return listaClientes;
+}
+
 void ListaClientes::adicionaCliente(Cliente *pessoa) {
     listaClientes->emplace_back(*pessoa);
 }

@@ -12,6 +12,7 @@ class ListaPedidos {
         ListaPedidos();
         ~ListaPedidos();
 
+        std::list<Pedido>*getLista();
         void adicionaPedidos(Pedido *pedido);
         void mostraListaPedidos();
      
