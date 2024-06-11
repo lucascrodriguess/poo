@@ -15,11 +15,6 @@ using namespace std;
         return lista;
     }
 
-
-    /*void GerenciadorVeiculos::adicionarVeiculo (Veiculo veiculo){
-        lista -> push_back(veiculo);
-    }*/
-
     void GerenciadorVeiculos::adicionarVeiculo (Veiculo *veiculo){
         lista->push_back(*veiculo);
     }

@@ -16,7 +16,6 @@ class GerenciadorVeiculos {
         
         list<Veiculo>*getLista();
 
-        //void adicionarVeiculo (Veiculo veiculo);
         void adicionarVeiculo(Veiculo* veiculo);
         void removerVeiculo(Veiculo *veiculo);
         Veiculo* buscarVeiculo(string modelo);
