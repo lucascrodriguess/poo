@@ -1,11 +1,22 @@
 # Programação Orientada a Objetos
-Lucas Corrêa Rodrigues - 2310100742
 
-## Tarefa 1
-Criação das classes Veículo, Cliente e Pedido.
+* Modificações feitas após a troca dos códigos:
 
 ## Tarefa 2
-Criação da classe Gerenciador de Veículos, que possui uma lista para veículos.
+✅ Adição de verificações ás funções Set e Get;
+
+✅ Reformulação de construtores e destrutores (os valores colocados nos atributos agoram passam pelos métodos Set a fim de serem validados).
 
 ## Tarefa 3
-Criação da classe Roteirização.
+✅ Implementação de sobreescrita de operadores (<<) na classe Cliente e Pedido;
+
+✅ Agora qualquer tipo de veículo pode ser definido para o transporte.
+
+## Tarefa 4
+✅ Criada a classe Dados;
+
+✅ Adição dos atributos que faltavam para comportar as informações do arquivo;
+
+✅ Realizada a leitura do arquivo CSV;
+
+✅ As informações foram passadas para os atributos de suas devidas classes.
